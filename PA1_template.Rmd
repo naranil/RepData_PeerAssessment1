@@ -22,7 +22,7 @@ for (day in levels(activities$date) ){
 ````
 And the results are visualized by the **hist** function :
 
-```{r}
+```{r, first histrogram}
 hist(histogram, main="Histogram of the total of steps per day", xlab = "total of steps per day")
 ````
 
@@ -40,7 +40,7 @@ median(histogram)
 * The average daily activity pattern:
 
 This time the function **tapply** is used to compute the mean of steps for each time interval.
-```{r}
+```{r, plot_act_pattern}
 act_pattern <- tapply(activities$steps, activities$interval, mean, na.rm=T)
 plot(seq(1/12,24,1/12), act_pattern, type="l", main = "Average number of steps in a day", xlab = "Time (hour)", ylab = "Number of steps") # the scale of x-axis is changed to have the time in hours
 ````
@@ -82,7 +82,7 @@ Which proves that *activities* and *activities_new* are the same data sets (exce
 * Histogram, mean and median:
 We can reuse the code written for the first part:
   * Histogram:
-```{r}
+```{r, new_histogram}
 histogram_new <- NULL
 for (day in levels(activities_new$date) ){
          histogram_new <- c(histogram_new, sum(activities_new$steps[activities_new$date==day]))
@@ -100,7 +100,7 @@ median(histogram_new, na.rm=T)
 Adding values with this method seems implies a decrease of the extreme value and a concentration around the mean.
 ## Are there differences in activity patterns between weekdays and weekends?
 First I add the new column to the data set as defined in the Peer assignment:
-```{r, results="hide"}
+```{r}
 options(warn=-1)
 # Initialisation at "weekday"
 activities_new$week <- "weekday"
@@ -112,7 +112,7 @@ levels(activities_new$week) <- factor(activities_new$week)
 options(warn=0)
 ````
 Using the plotting system, we can now compare the average activities in the weekend and during the week:
-```{r}
+```{r, wdVSwe, results="hide"}
 act_pattern_WD <- tapply(activities_new$steps[activities_new$week=="weekday"], activities_new$interval[activities_new$week=="weekday"],mean, na.rm=T)
 
 act_pattern_WE <- tapply(activities_new$steps[activities_new$week=="weekend"], activities_new$interval[activities_new$week=="weekend"],mean, na.rm=T)

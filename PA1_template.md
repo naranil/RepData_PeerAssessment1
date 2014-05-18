@@ -32,7 +32,7 @@ And the results are visualized by the **hist** function :
 hist(histogram, main = "Histogram of the total of steps per day", xlab = "total of steps per day")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk first histrogram](figure/first_histrogram.png) 
 
 
 * The mean and the median:
@@ -68,7 +68,7 @@ plot(seq(1/12, 24, 1/12), act_pattern, type = "l", main = "Average number of ste
     xlab = "Time (hour)", ylab = "Number of steps")  # the scale of x-axis is changed to have the time in hours
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
+![plot of chunk plot_act_pattern](figure/plot_act_pattern.png) 
 
 
 * Interval which contains the maximum of steps in average:
@@ -140,7 +140,7 @@ hist(histogram_new, main = "Histogram of the total of steps per day with the new
     xlab = "Total of steps per day")
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
+![plot of chunk new_histogram](figure/new_histogram.png) 
 
   * Mean:
 
@@ -195,6 +195,6 @@ plot(seq(1/12, 24, 1/12), act_pattern_WE, type = "l", main = "Average number of 
     xlab = "Time (hour)", ylab = "Number of steps")
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15.png) 
+![plot of chunk wdVSwe](figure/wdVSwe.png) 
 
 Those two patterns are quite different. During the weekdays, the activity increases rapidly in the morning, which corresponds to the period where the person starts his/her day and stays approximately constant instantly with some pics during the day. Considering the weekend pattern, we can see that during the day, the activity is more or less random. This is mostly because during the weekdays, there is a predefined routine and during the weekends the activities are usually not the same.
